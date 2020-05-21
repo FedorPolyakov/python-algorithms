@@ -4,20 +4,20 @@
 #  Это два абсолютно разных значения.
 import random
 
-SIZE = 20
-MIN_ITEM = -20
-MAX_ITEM = 5
+SIZE = 1_000
+MIN_ITEM = -1_000
+MAX_ITEM = 1_000
 array = [random.randint(MIN_ITEM,MAX_ITEM) for _ in range(SIZE)]
 MIN_ID = -1
 
 for i in range(len(array)):
-    if array[i] < 0:
+    if array[i] < 0 and MIN_ID == -1:
         MIN_ID = i
-    elif (array[i] < 0 and array[i] >= MIN_EL):
+    elif (array[i] < 0 and array[i] >= array[MIN_ID]):
         MIN_ID = i
 
 print(array)
 # если в исходном массиве вести позиции с нуля, то выводим следующее
 print(f'максимальный отрицательный элемент {array[MIN_ID]} номер последнего такого элемента {MIN_ID}')
 # если в исходном массиве вести позиции с единицы, то выводим следующее
-#print(f'максимальный отрицательный элемент {array[MIN_ID]} номер последнего такого элемента {MIN_ID+1}')
+print(f'максимальный отрицательный элемент {array[MIN_ID]} номер последнего такого элемента {MIN_ID+1}')
