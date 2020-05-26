@@ -38,7 +38,7 @@ def prime(m):
             if n % i == 0:
                 return False
         return True
-    N=5
+    n=5
     s=[2,3]
     k = m
     if k == 1:
@@ -46,11 +46,11 @@ def prime(m):
     elif k == 2:
         return s[1]
     while True:
-        if issimple(N) is True:
-            s.append(N)
+        if issimple(n) is True:
+            s.append(n)
         if len(s) == k :
             break
-        N+=2
+        n+=2
     return f'не решето {s[-1]}'
 
 number = int(input('Введите номер простого числа: '))
